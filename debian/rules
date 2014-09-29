@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+
+DEB_DISPLACE_EXTENSION = .huayra
+
+DEB_DIVERT_FILES_huayra-config-efi-grub2-common += /usr/sbin/update-grub.huayra
+DEB_UNDIVERT_FILES_huayra-config-efi-grub2-common += /usr/sbin/update-grub.huayra
+
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/rules/config-package.mk

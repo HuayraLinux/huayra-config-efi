@@ -1,0 +1,23 @@
+huayra-config-efi (0.4) unstable; urgency=medium
+
+  * Correccion al update-grub.
+
+ -- Desarrolladores de Huayra <desarrollo@huayragnulinux.com.ar>  Wed, 14 May 2014 12:02:11 -0300
+
+huayra-config-efi (0.3) unstable; urgency=medium
+
+  * Correccion al update-grub.
+
+ -- Desarrolladores de Huayra <desarrollo@huayragnulinux.com.ar>  Wed, 14 May 2014 11:27:36 -0300
+
+huayra-config-efi (0.2) unstable; urgency=medium
+
+  * Correccion al postinst de config-efi.
+
+ -- Desarrolladores de Huayra <desarrollo@huayragnulinux.com.ar>  Tue, 13 May 2014 22:18:07 -0300
+
+huayra-config-efi (0.1) unstable; urgency=medium
+
+  * Config Inicial.
+
+ -- Desarrolladores de Huayra <desarrollo@huayragnulinux.com.ar>  Tue, 13 May 2014 15:23:21 -0300

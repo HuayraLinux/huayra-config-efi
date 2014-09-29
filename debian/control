@@ -1,0 +1,31 @@
+Source: huayra-config-efi
+Section: text
+Priority: extra
+Build-Depends:  cdbs, debhelper (>= 9.20120909),
+                config-package-dev (>= 5.1.1~)
+Maintainer: Desarrolladores de Huayra <desarrollo@huayragnulinux.com.ar>
+Standards-Version: 3.9.5
+
+Package: huayra-config-efi
+Architecture: all
+Depends: ${misc:Depends},
+         huayra-config-efi-grub-common,
+         huayra-config-efi-grub2-common
+Description: Archivos de configuracion para Huayra
+ Este paquete simplemente modifica archivos de configuracion
+ del paquete en Debian para la distro Huayra.
+
+Package: huayra-config-efi-grub-common
+Architecture: all
+Depends: ${misc:Depends}
+Description: Archivo de configuracion para Grub
+ Este paquete simplemente contiene archivos de configuracion.
+
+Package: huayra-config-efi-grub2-common
+Architecture: all
+Depends: ${misc:Depends}, grub2-common
+Provides: ${diverted-files}
+Conflicts: ${diverted-files}
+Description: Archivos de configuracion de Grub2 para Huayra
+ Este paquete simplemente modifica archivos del paquete en
+ Debian de Grub2 para la distro Huayra.

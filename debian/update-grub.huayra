@@ -1,0 +1,31 @@
+#!/bin/sh
+set -e
+
+boot_efi_path(){
+    BOOT_EFI="";
+    MTAB=`grep -i boot/efi /etc/mtab|cut -d ' ' -f2`;
+    if [ -z "$MTAB" ];
+    then
+        if [ -d /boot/EFI ];
+        then
+            mount /dev/sda3 /boot/EFI;
+            BOOT_EFI=/boot/EFI;
+        fi
+    else
+        BOOT_EFI=$MTAB;
+    fi
+
+    echo $BOOT_EFI;
+}
+
+# lineas por defecto en update-grub
+GRUB_CFG=/boot/grub/grub.cfg
+grub-mkconfig -o $GRUB_CFG "$@"
+
+# lineas extras para agregar a la config de GRUB2 en la particion EFI.
+BOOT_EFI_ROOT=`boot_efi_path`;
+if [ -n "$BOOT_EFI_ROOT" ];
+then
+    BOOT_EFI_PATH=`find $BOOT_EFI_ROOT -maxdepth 2 -type d|grep -i efi/boot`
+    cp $GRUB_CFG $BOOT_EFI_PATH/grub.cfg
+fi

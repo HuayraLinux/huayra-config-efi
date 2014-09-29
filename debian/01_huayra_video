@@ -1,0 +1,10 @@
+#! /bin/sh
+set -e
+
+cat <<EOF
+
+function load_video {
+  echo "Initializing boot sequence...";
+}
+
+EOF
